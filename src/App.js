@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import './App.css'
+export const App = () => {
 
-function App() {
+  const openWindow = () => {
+    const top=window.innerHeight-500
+    const left=window.innerWidth-450
+    let dest = "";
+    var mq = window.matchMedia( "(max-width: 570px)" );
+    if (!mq.matches) {
+        dest = "_blank"
+    }
+    if(dest !== "") {
+      window.open("https://www.google.com", dest, `width=400,height=450,left=${left},top=${top}`);
+    }
+    else {
+      window.open("https://www.google.com", `width=400,height=450,left=${left},top=${top}`);
+    }
+    
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className="name">PRIYA SINGH</div>
+    <div className="click">
+      <button onClick={openWindow} className="btn">Click Me</button>
     </div>
+    </>
   );
-}
-
-export default App;
+};
