@@ -29,16 +29,17 @@ export const App = () => {
       iframe.style.top = "30px";
     }
     
-    iframe.style.bottom = 0;
-    iframe.style.right = 0;
+    iframe.style.bottom = '5%';
+    iframe.style.right = '5%';
     iframe.style.backgroundColor = "gray";
     iframe.style.border = "none";
     let button = document.createElement("button");
-    button.innerText = "Close";
-    button.style.bottom = "60px";
-    button.style.right = "40px";
-    button.style.zIndex = "1";
-    button.style.padding = "5px";
+    button.classList.add("x");
+    button.innerText = "X";
+    // button.style.bottom = "60px";
+    // button.style.right = "40px";
+    // button.style.zIndex = "1";
+    // button.style.padding = "5px";
     button.addEventListener("click", () => {
       let url =
         window.location !== window.parent.location
